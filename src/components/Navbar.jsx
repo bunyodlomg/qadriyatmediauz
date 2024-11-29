@@ -1,5 +1,5 @@
-import { FaFacebook, FaBars, FaTimes, FaPhone, FaTelegram } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FaFacebook, FaBars, FaTimes, FaPhone, FaTelegram, FaYoutube } from "react-icons/fa";
+// import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../theme/themeSlice";
 import { IoMoon, IoSunny } from "react-icons/io5";
@@ -15,11 +15,11 @@ const Navbar = () => {
     return (
         <div style={{ zIndex: "50" }} className="flex justify-center">
             <nav
-                style={{ zIndex: 50 }} // Navbarni yuqoriga chiqarish uchun z-index
+                style={{ zIndex: 50 }}
                 className={`bg-transparent backdrop-blur-3xl text-current shadow-2xl mt-2 ${isMenuOpen ? 'rounded-t-full' : 'rounded-full'} fixed w-[90%] top-0 `}
             >
                 <div className="flex justify-between items-center p-4 container">
-                    <ul className="sm:flex items-center gap-5 hidden">
+                    <ul className="md:flex items-center gap-5 hidden">
                         <li>
                             <a href="#home" className="hover:text-brand active:text-green-900">
                                 Asosiy
@@ -45,39 +45,46 @@ const Navbar = () => {
                         <img className="mx-auto w-16" src="/logo.png" alt="Logo" />
                     </a>
                     <div className="flex items-center gap-5">
-                        <div className="sm:flex items-center gap-5 hidden">
+                        <div className="md:flex items-center gap-5 hidden">
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                href="https://www.instagram.com/qadriyat.media/"
+                                href="https://www.instagram.com/qadriyat_media/"
                             >
-                                <PiInstagramLogoFill className="hover:text-brand size-6" />
+                                <PiInstagramLogoFill className="hover:text-pink-500 size-6" />
                             </a>
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 href="https://www.facebook.com/Qadriyatmedia/"
                             >
-                                <FaFacebook className="hover:text-brand size-5" />
+                                <FaFacebook className="hover:text-blue-800 size-5" />
                             </a>
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 href="https://t.me/Qadriyatmedia"
                             >
-                                <FaTelegram className="hover:text-brand size-5" />
+                                <FaTelegram className="hover:text-blue-400 size-5" />
+                            </a>
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://www.youtube.com/@qadriyatmedia"
+                            >
+                                <FaYoutube className="hover:text-red-500 size-6" />
                             </a>
                             <a href="tel:+998916919191">
-                                <FaPhone className="hover:text-brand size-4" />
+                                <FaPhone className="hover:text-brand size-4 rotate-90" />
                             </a>
                         </div>
                         <label className="ml-5 swap-rotate transition-transform duration-200 swap active:rotate-45">
                             <input type="checkbox" className="theme-controller" value="synthwave" onClick={() => dispatch(toggleTheme())} />
-                            {theme && theme === 'dark' ? <IoSunny className="size-5" /> : <IoMoon className="size-5" />}
+                            {theme && theme === 'dark' ? <IoSunny className="size-5 hover:text-yellow-500" /> : <IoMoon className="size-5 hover:text-blue-800" />}
                         </label>
                         <button
                             onClick={toggleMenu}
-                            className="sm:hidden focus:outline-none"
+                            className="md:hidden focus:outline-none"
                         >
                             {isMenuOpen ? (
                                 <FaTimes size={24} className="text-gray-800 dark:text-white" />
@@ -91,8 +98,8 @@ const Navbar = () => {
                 {/* Mobil menyu */}
                 {isMenuOpen && (
                     <ul
-                        style={{ zIndex: 49 }} // Mobil menyu uchun z-indexni kamaytirish
-                        className="top-15 left-0 absolute flex flex-col items-center gap-4 sm:hidden bg-gray-100 dark:bg-gray-900 pt-20 rounded-b-lg w-full h-[85vh] text-2xl"
+                        style={{ zIndex: 49 }}
+                        className="top-15 left-0 absolute flex flex-col items-center gap-4 md:hidden bg-gray-100 dark:bg-gray-900 pt-20 rounded-b-lg w-full h-[85vh] text-2xl"
                     >
                         <li>
                             <a
@@ -132,26 +139,33 @@ const Navbar = () => {
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                href="https://www.instagram.com/qadriyat.media/"
+                                href="https://www.instagram.com/qadriyat_media/"
                             >
-                                <PiInstagramLogoFill size={19} className="hover:text-brand" />
+                                <PiInstagramLogoFill className="hover:text-pink-500 size-6" />
                             </a>
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 href="https://www.facebook.com/Qadriyatmedia/"
                             >
-                                <FaFacebook className="hover:text-brand" />
+                                <FaFacebook className="hover:text-blue-800 size-5" />
                             </a>
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 href="https://t.me/Qadriyatmedia"
                             >
-                                <FaTelegram className="hover:text-brand" />
+                                <FaTelegram className="hover:text-blue-400 size-5" />
+                            </a>
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://www.youtube.com/@qadriyatmedia"
+                            >
+                                <FaYoutube className="hover:text-red-500 size-6" />
                             </a>
                             <a href="tel:+998916919191">
-                                <FaPhone className="hover:text-brand" />
+                                <FaPhone className="hover:text-brand size-4 rotate-90" />
                             </a>
                         </div>
                     </ul>

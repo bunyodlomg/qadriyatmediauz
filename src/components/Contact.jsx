@@ -1,9 +1,11 @@
+import toast, { Toaster } from "react-hot-toast";
+
 const Contact = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
 
-        formData.append("access_key", "dc60972d-dd6a-43c5-b90a-c242fe514e6a");
+        formData.append("access_key", "0a792cce-1fba-473b-a5d9-a6c15431ff5a");
 
         const object = Object.fromEntries(formData);
         const json = JSON.stringify(object);
@@ -18,15 +20,16 @@ const Contact = () => {
         }).then((res) => res.json());
 
         if (res.success) {
-            alert("Xabaringiz yuborildi. Rahmat!");
-            event.target.reset(); // Formani tozalash
+            toast.success('Xabaringiz yuborildi. Rahmat!')
+            event.target.reset();
         } else {
-            alert("Xabar yuborishda xatolik yuz berdi. Iltimos, qaytadan urinib ko'ring.");
+            toast.error("Xabar yuborishda xatolik yuz berdi. Iltimos, qaytadan urinib ko'ring.")
         }
     };
 
     return (
         <section id="contact" className="py-16">
+            <Toaster position="top-center" />
             <div className="mx-auto px-6 lg:px-16 container">
                 <h2 data-aos="fade-up" data-aos-duration="1000" className="mt-12 mb-8 font-bold text-4xl text-center text-gray-800 dark:text-white">
                     Biz bilan bog'laning

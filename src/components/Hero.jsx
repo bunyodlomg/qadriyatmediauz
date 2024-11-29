@@ -8,7 +8,7 @@ const Hero = () => {
           {/* Left section with different animation effects */}
           <div className="max-w-lg text-left" data-aos="fade-up" data-aos-duration="1000">
             <h1 className="mb-4 font-bold text-4xl" data-aos="zoom-in" data-aos-duration="1200">
-              Qadriyat Media – O'zbekistondagi yetakchi reklama agentligi
+              Qadriyat Media – O'zbekistondagi yetakchi tashqi reklama agentligi
             </h1>
             <p className="mb-6 text-xl" data-aos="fade-in" data-aos-duration="1400">
               Biz brendlaringizni strategik joylarda namoyish qilish orqali e'tiborni jalb qilamiz.
